@@ -10,6 +10,7 @@
 html
 {
     font-size: 30%;
+    overflow: hidden;
 }
 .bg img
 {
@@ -114,7 +115,7 @@ html
 {
     position: absolute;
     bottom: 5%;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     color: black;
 }
 
