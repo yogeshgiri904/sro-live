@@ -1,0 +1,138 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins";
+    font-weight: 300;
+}
+html
+{
+    font-size: 30%;
+}
+.main
+{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right bottom, cyan, red);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+    width: 320px;
+    height: 480px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.300);
+    text-align: center;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    padding-bottom: 40px;
+}
+#title
+{
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    word-spacing: .5rem;
+    font-size: 5rem;
+    font-weight: 500;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.300);
+}
+#artist
+{
+    text-transform: capitalize;
+    color: darkgray;
+    font-size: 2.8rem;
+    letter-spacing: .2rem;
+}
+.poster
+{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+}
+.poster img
+{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.400);
+}
+.control
+{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.control button
+{
+    font-size: 4rem;
+    color: black;
+    cursor: pointer;
+    text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.400);
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+.control button:hover
+{
+    transform: scale(1.2);
+}
+#play, #pause
+{
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0px 10px 3px rgba(0, 0, 0, 0.400);
+    font-size: 3rem;
+    padding-left: 2px;
+    transition: all 0.5s ease;
+}
+#play:hover, #pause:hover
+{
+    color: black;
+    text-shadow: none;
+    background-color: white;
+}
+#pause
+{
+    padding-left: 0;
+    display: none;
+}
+.copyright
+{
+    position: absolute;
+    bottom: 1%;
+    font-size: 2.5rem;
+    color: black;
+}
+
+/* add class - animation on playing */
+
+.animate
+{
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Music | SRO</title>
+    <link rel="stylesheet" href="lib/music.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="heading">
+                <h2 id="title">Hamari Adhuri Kahani</h2>
+                <h3 id="artist">Arjit Singh</h3>
+            </div>
+            <div class="poster">
+                <img src="music/hamari adhuri kahani.png" title="Album">
+            </div>
+            <audio src="music/hamari adhuri kahani.mp3"></audio>
+            <div class="control">
+                <button id="suffle" title="Suffle"><i class="fa fa-random"></i></button>
+                <button id="prev" title="Previous"><i class="fa fa-backward"></i></button>
+                <button id="play" title="Play"><i class="fa fa-play"></i></button>
+                <button id="pause" title="pause"><i class="fa fa-pause"></i></button>
+                <button id="next" title="Next"><i class="fa fa-forward"></i></button>
+                <button id="fav" title="Add Favorite"><i class="fa fa-heart-o"></i></button>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; All Rights Reserved | Proudly Created By RadheY</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // pause and play
+    const music = document.querySelector('audio');
+    const img = document.querySelector('img')  
+    const play = document.getElementById('play');
+    const pause = document.getElementById('pause');
+
+    const playMusic = () => {
+        music.play();
+        // play.classList.replace('fa-play', 'fa-pause');
+        img.classList.add('animate');
+        play.style.display= 'none';
+        pause.style.display= 'inline';
+
+    };
+
+    const pauseMusic = () => {
+        music.pause();
+        // play.classList.replace('fa-play', 'fa-pause');
+        img.classList.remove('animate');
+        pause.style.display= 'none';
+        play.style.display= 'inline';
+
+    };
+
+    play.addEventListener("click", () =>{
+        playMusic();
+    })
+
+    pause.addEventListener("click", () =>{
+        pauseMusic();
+    })
+
+    // next and prev
+
+    const title = document.getElementById('title');
+    const artist = document.getElementById('artist');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const songs = 
+    [
+        {
+            title: 'hamari adhuri kahani',
+            artist: 'arjit singh',
+        },
+        {
+            title: 'laal ishq',
+            artist: 'arjit singh',
+        },
+        {
+            title: 'kaise hua',
+            artist: 'vishal mishra',
+        },
+        {
+            title: 've maahi',
+            artist: 'arjit singh',
+        },
+        {
+            title: 'filhal',
+            artist: 'B praak',
+        },
+        {
+            title: 'toh phir aao',
+            artist: 'mustafa zahid',
+        },
+        {
+            title: 'phir kabhi',
+            artist: 'arjit singh',
+        },
+        {
+            title: 'tujhe kitna',
+            artist: 'jubin nautiyal',
+        },
+    ]
+
+    const loadSong = (songs) =>{
+        title.textContent = songs.title;
+        artist.textContent = songs.artist;
+        music.src = 'music/' +songs.title+ '.mp3';
+        img.src = 'music/' +songs.title+ '.png';
+    }
+
+    let sn = 0;
+    const nextSong = () => {
+        //sn++;     dont use this it will never stop increament.
+        sn = (sn + 1) % songs.length;
+        loadSong(songs[sn]);
+        playMusic();
+    };
+
+    const prevSong = () => {
+        //sn--;     dont use this it will never stop decreament.
+        sn = (sn - 1 + songs.length) % songs.length;
+        loadSong(songs[sn]);
+        playMusic();
+    };
+
+    next.addEventListener('click', nextSong);
+    prev.addEventListener('click', prevSong);
+    
+</script>
