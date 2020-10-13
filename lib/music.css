@@ -22,8 +22,8 @@ html
 }
 .container
 {
-    width: 320px;
-    height: 480px;
+    width: 62rem;
+    height: 100rem;
     background-color: white;
     border-radius: 10px;
     box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.300);
@@ -32,8 +32,7 @@ html
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    padding: 30px;
-    padding-bottom: 40px;
+    padding: 5rem;
 }
 #title
 {
@@ -80,11 +79,6 @@ html
     text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.400);
     background: transparent;
     border: none;
-    transition: all 0.3s ease;
-}
-.control button:hover
-{
-    transform: scale(1.2);
 }
 #play, #pause
 {
