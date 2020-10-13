@@ -1,0 +1,350 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+    outline: none;
+    font-weight: 300;
+}
+.main
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 120vh;
+    background-image: url(../img/Background-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0%, -10%;
+}
+.header
+{
+    position: fixed;
+    z-index: 10;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.500);
+    transition: all ease 0.5s;
+}
+.header img
+{
+    width: 100px;
+    cursor: pointer;
+}
+.nav a
+{
+    margin: 0px 8px;
+    text-decoration: none;
+    color: white;
+}
+.nav a:hover
+{
+    border-bottom: 2px solid white;
+}
+.login-btn a
+{
+    color: cyan;
+    text-decoration: none;
+    border: 2px solid cyan;
+    font-weight: bold;
+    border-radius: 100px;
+    padding: 6px 15px;
+    transition: 0.5s;
+}
+.login-btn a:hover
+{
+    background-color: cyan;
+    color: black;
+}
+.heading
+{
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 20px;
+}
+.heading h1
+{
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+.heading span
+{
+    font-weight: bold;
+    color: cyan;
+    text-transform: uppercase;
+}
+.explore-btn a
+{
+    display: inline-block;
+    margin-top: 30px;
+    color: black;
+    text-decoration: none;
+    background: linear-gradient(to right bottom, purple, cyan);
+    border-radius: 100px;
+    padding: 10px 40px;
+
+}
+.explore-btn a:hover
+{
+    color: white;
+    background: transparent;
+    border: 1px solid white ;
+}
+.mob-btn
+{
+    display: none;
+}
+
+@media(max-width: 720px)
+{
+    .header
+    {
+        height: 60px;
+    }
+    .nav
+    {
+        position: fixed;
+        top: 60px;
+        left: 0px;
+        width: 100vw;
+        height: 0vh;
+        display: inline-flex;
+        flex-flow: column;
+        overflow: hidden;
+        background-color: black;
+        transition: all 0.5s ease;
+    }
+    .nav a
+    {
+        padding: 10px 20px;
+        border-bottom: 1px solid white;
+    }
+    .nav a:first-child
+    {
+        padding-top: 30px;
+    }
+    .nav a:last-child
+    {
+        border-bottom: none;
+    }
+    .mob-btn
+    {
+        display: inline;
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+    }
+    #close-btn
+    {
+        display: none;
+    }
+
+}
+
+/* Site-body */
+
+/* Top Upcoming */
+
+.site-body
+{
+    position: absolute;
+    top: 120%;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.section
+{
+    width: 100vw;
+    height: fit-content;
+    display: inline-flex;
+    padding: 50px 0px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/Abstract.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50%;
+}
+.section-h
+{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.section-p
+{
+    text-align: center;
+    font-size: 1rem;
+    padding: 5px;
+}
+.section:nth-child(even)
+{
+    background-image: url(../img/Abstract-2.png);
+    background-position: left;
+}
+.top-up
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 80vw;
+    height: auto;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.500);
+}
+.poster
+{
+    height: 400px;
+    overflow: hidden;
+    flex: 1 1 300px;
+}
+.poster img
+{
+    height: 100%;
+    overflow: hidden;
+    transition: all ease .5s;
+}
+.poster img:hover
+{
+    transform: scale(1.1);
+}
+.text-box
+{
+    flex: 1 1 300px;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.text-box span
+{
+    color: crimson;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+.text-box h2
+{
+    font-weight: bold;
+}
+.stars
+{
+    width: 130px;
+    height: 50px;
+}
+
+@media(max-width: 720px)
+{
+    .section-p
+    {
+        font-size: .8rem;
+    }
+    .text-box h2
+    {
+        font-size: 1.2rem;
+    }
+    .text-box p
+    {
+        font-size: .8rem;
+    }
+    .poster
+    {
+        height: auto;
+    }
+    .poster img
+    {
+        width: 100%;
+    }
+
+}
+
+/*latest Launches*/
+
+.card-grid
+{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,300px);
+    grid-gap: 30px;
+    justify-content: center;
+}
+.card
+{
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.500) ;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 200px 160px 50px;
+    grid-template-areas: "img" "text" "stats";
+}
+.card-img
+{
+    grid-area: img;
+    background-image: url(../img/card-5.png);
+    background-size: cover;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.card:nth-child(2) .card-img
+{
+    background-image: url(../img/card-2.png);
+}
+.card:nth-child(3) .card-img
+{
+    background-image: url(../img/card-3.png);
+}
+.card:nth-child(4) .card-img
+{
+    background-image: url(../img/card-4.png);
+}
+
+.like
+{
+    float: right;
+    position: relative;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    padding-top: 2px;
+    font-size: 1.8rem;
+    color: crimson;
+    border: none;
+    background-color: transparent;
+}
+.card-text
+{
+    grid-area: text;
+}
+.card-text h2
+{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.card-stats
+{
+    padding-top: 10px;
+    grid-area: stats;
+    background-color: crimson;
+    color: white;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
