@@ -11,22 +11,37 @@
 </head>
 <body>
     <div class="bg">
-        <img src="music/hamari adhuri kahani.png" id="bg">
+        <img src="music/laal ishq.png" id="bg">
     </div>
     <div class="main">
         <div class="container">
-            <div class="main-btn">
-                <button id="back" title="Back"><i class="fa fa-arrow-left"></i></button>
+            <div class="main_btn">
+                <a href='index.html'>                 
+                    <button id="back" title="Back"><i class="fa fa-arrow-left"></i></button>
+                </a> 
                 <span>Playing Now</span>
                 <button id="list" title="Playlist"><i class="fa fa-bars"></i></button>
             </div>
+
             <div class="poster">
-                <img src="music/hamari adhuri kahani.png" id="poster">
+                <img src="music/laal ishq.png" id="poster">
             </div>
+
             <div class="heading">
-                <h2 id="title">Hamari Adhuri Kahani</h2>
+                <h2 id="title">Laal Ishq</h2>
                 <h3 id="artist">Arjit Singh</h3>
             </div>
+
+            <div class="progress_container">
+                <div class="duration_container">
+                    <div id="current">00:00</div>
+                    <div id="total">06:27</div>
+                </div>
+                <div class="progress_bar" id="progress_bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            
             <audio src="music/hamari adhuri kahani.mp3"></audio>
             <div class="control">
                 <button id="suffle" title="Suffle"><i class="fa fa-random"></i></button>
@@ -34,7 +49,8 @@
                 <button id="play" title="Play"><i class="fa fa-play"></i></button>
                 <button id="pause" title="pause"><i class="fa fa-pause"></i></button>
                 <button id="next" title="Next"><i class="fa fa-forward"></i></button>
-                <button id="fav" title="Add Favorite"><i class="fa fa-heart-o"></i></button>
+                <button id="fav_o" title="Add Favorite"><i class="fa fa-heart-o"></i></button>
+                <button id="fav" title="Favorite Added"><i class="fa fa-heart"></i></button>
             </div>
         </div>
         <div class="copyright">
@@ -43,6 +59,8 @@
     </div>
 </body>
 </html>
+
+
 <script>
     // pause and play
     const music = document.querySelector('audio');
@@ -87,11 +105,11 @@
     const songs = 
     [
         {
-            title: 'hamari adhuri kahani',
+            title: 'laal ishq',
             artist: 'arjit singh',
         },
         {
-            title: 'laal ishq',
+            title: 'hamari adhuri kahani',
             artist: 'arjit singh',
         },
         {
@@ -104,7 +122,11 @@
         },
         {
             title: 'jiyein kyun',
-            artist: 'Mayur Singhal',
+            artist: 'mayur singhal',
+        },
+        {
+            title: 'favorite tone',
+            artist: 'radhey goswami ',
         },
         {
             title: 'filhal',
@@ -149,5 +171,93 @@
 
     next.addEventListener('click', nextSong);
     prev.addEventListener('click', prevSong);
+
+    // progress bar
+
+    let progress = document.getElementById('progress');
+    const total = document.getElementById('total');
+    let current = document.getElementById('current');
+
+    music.addEventListener('timeupdate', (event) => {
+        const {currentTime, duration} = event.srcElement;
+
+        // progress bar
+        let progress_time = (currentTime / duration) * 100;
+        progress.style.width = progress_time + '%';
+        // total time
+        let tot_minutes = Math.floor(duration / 60);
+        let tot_seconds = Math.floor(duration % 60);
+        if(tot_minutes<10)
+        {
+            tot_minutes='0' + tot_minutes;
+        }
+        if(tot_seconds<10)
+        {
+            tot_seconds='0' + tot_seconds;
+        }
+
+        let tot_time = tot_minutes + ':' + tot_seconds;
+        if(duration)
+        {
+            total.textContent = tot_time;
+        }
+        else
+        {
+            total.textContent = '00:00'; 
+        }
+        // current time
+        let cur_minutes = Math.floor(currentTime / 60);
+        let cur_seconds = Math.floor(currentTime % 60);
+        if(cur_minutes<10)
+        {
+            cur_minutes='0' + cur_minutes;
+        }
+        if(cur_seconds<10)
+        {
+            cur_seconds='0' + cur_seconds;
+        }
+        const cur_time = cur_minutes + ':' + cur_seconds;
+        current.textContent = cur_time;
+        
+        // when song ends start new
+        if(current == total)
+        {
+            next.addEventListener('click', nextSong);
+        }
+    });
+
+    // clickable progress
+
+
+    progress_bar.addEventListener('click', (event) => {
+        const{duration} = music;
+        let move_progress = (event.offsetX/event.srcElement.clientWidth) * duration;
+        music.currentTime = move_progress;
+
+    });
+    
+    //fav
+
+    const fav_o = document.getElementById('fav_o');
+    const fav = document.getElementById('fav');
+
+    const add = () => {
+        fav_o.style.display= 'none';
+        fav.style.display= 'inline';
+
+    };
+    const remove = () => {
+        fav.style.display= 'none';
+        fav_o.style.display= 'inline';
+
+    };
+    fav_o.addEventListener("click", () =>{
+        add();
+    });
+    fav.addEventListener("click", () =>{
+        remove();
+    });
+
+
     
 </script>
