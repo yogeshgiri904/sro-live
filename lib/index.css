@@ -349,11 +349,3 @@
     border-bottom-left-radius: 4px;
 }
 
-.footer
-{
-    position: absolute;
-    margin-bottom: auto;
-    width: 100vw;
-    height: 20px;
-    background-color: blue;
-}
