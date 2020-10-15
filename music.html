@@ -15,7 +15,6 @@
     </div>
     <div class="main">
         <div class="main_box">
-            <div class="player_box">
                 <div class="main_btn">
                     <a href='index.html'>                 
                         <button id="back" title="Back"><i class="fa fa-arrow-left"></i></button>
@@ -23,16 +22,16 @@
                     <span>Playing Now</span>
                     <button id="list" title="Playlist"><i class="fa fa-bars"></i></button>
                 </div>
-    
+
                 <div class="poster">
                     <img src="music/laal ishq.png" id="poster">
                 </div>
-    
+
                 <div class="heading">
                     <h2 id="title">Laal Ishq</h2>
                     <h3 id="artist">Arjit Singh</h3>
                 </div>
-    
+
                 <div class="progress_box">
                     <div class="duration_box">
                         <div id="current">00:00</div>
@@ -55,13 +54,12 @@
                     <button id="fav_o" title="Add Favorite"><i class="fa fa-heart-o"></i></button>
                     <button id="fav" title="Favorite Added"><i class="fa fa-heart"></i></button>
                 </div>
-            </div>
-            <div class="list_box">
-                <button id="list_up"><i class="fa fa-angle-up"></i></button>
-                <div class="list">
-                    <h2>Songs Playlist</h2>
+                <div class="list_box" id="list_box">
+                    <button id="list_up"><i class="fa fa-angle-up"></i></button>
+                    <div class="list">
+                        <h2>Songs Playlist</h2>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="copyright">
             <p>&copy; Shri Ram Organization | All Rights Reserved</p>
@@ -120,7 +118,7 @@
             artist: 'arjit singh',
         },
         {
-            title: 'hamari adhuri kahani',
+            title: 'hamari adhuri',
             artist: 'arjit singh',
         },
         {
@@ -136,7 +134,7 @@
             artist: 'mayur singhal',
         },
         {
-            title: 'favorite tone',
+            title: 'geeta govindam',
             artist: 'radhey goswami ',
         },
         {
@@ -305,5 +303,30 @@
     console.log(loop);
 
     });
+
+    // playlist show
+
+    const list_up = document.getElementById('list_up');
+    const player_box = document.getElementById('player_box');
+    const list_box = document.getElementById('list_box');
+    let rotate = false;
+
+    list_up.addEventListener('click' , ()=>
+    {
+        if(rotate==false)
+        {
+            list_up.style.transform = 'rotate(180deg)';
+            list_box.style.height = '93%';
+            return rotate = true;
+        }
+        else
+        {
+            list_up.style.transform = 'none';
+            list_box.style.height = '40px';
+            return rotate = false;
+        }
+
+    });
+
     
 </script>
