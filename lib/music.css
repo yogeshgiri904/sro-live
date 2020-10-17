@@ -331,3 +331,14 @@ input
     }
 }
 
+
+@media(max-width:720px)
+{
+    .main_box
+    {
+        top: -2%;
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
