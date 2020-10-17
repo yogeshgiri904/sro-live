@@ -57,7 +57,55 @@
                 <div class="list_box" id="list_box">
                     <button id="list_up"><i class="fa fa-angle-up"></i></button>
                     <div class="list">
-                        <h2>Songs Playlist</h2>
+                        <div class="search_box">
+                            <input type="text" placeholder="Search Music...">
+                            <div class="search_icon"><button><i class="fa fa-search"></i></button></div>
+                        </div>
+                        <div class="playlist">
+                            <div class="playlist_btn">
+                                <button id="active">Songs</button>
+                                <button>Artist</button>
+                                <button>Playlist</button>
+                            </div>
+                            <table class="list_table">
+                                <tr>
+                                    <td>
+                                        <h2>Hamari Adhuri Kahani</h2>
+                                        <p>Arjit Singh</p>
+                                    </td>
+                                    <td>
+                                        <button class="cbtn"><i class="fa fa-play"></i></button>
+                                    </td>
+                                    <td>
+                                        <button class="cbtn"><i class="fa fa-heart-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h2>Hamari Adhuri Kahani</h2>
+                                        <p>Arjit Singh</p>
+                                    </td>
+                                    <td>
+                                        <button class="cbtn"><i class="fa fa-play"></i></button>
+                                    </td>
+                                    <td>
+                                        <button class="cbtn"><i class="fa fa-heart-o"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h2>Hamari Adhuri Kahani</h2>
+                                        <p>Arjit Singh</p>
+                                    </td>
+                                    <td>
+                                        <button class="cbtn"><i class="fa fa-play"></i></button>
+                                    </td>
+                                    <td>
+                                        <button class="cbtn"><i class="fa fa-heart-o"></i></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
         </div>
@@ -118,7 +166,7 @@
             artist: 'arjit singh',
         },
         {
-            title: 'hamari adhuri',
+            title: 'hamari adhuri kahani',
             artist: 'arjit singh',
         },
         {
@@ -180,6 +228,7 @@
 
     next.addEventListener('click', nextSong);
     prev.addEventListener('click', prevSong);
+
 
 
     // music target and srcElement
@@ -309,6 +358,8 @@
     const list_up = document.getElementById('list_up');
     const player_box = document.getElementById('player_box');
     const list_box = document.getElementById('list_box');
+    const list = document.querySelector('.list');
+
     let rotate = false;
 
     list_up.addEventListener('click' , ()=>
@@ -317,16 +368,17 @@
         {
             list_up.style.transform = 'rotate(180deg)';
             list_box.style.height = '93%';
+            list.style.display = 'inline';
             return rotate = true;
         }
         else
         {
             list_up.style.transform = 'none';
             list_box.style.height = '40px';
+            list.style.display = 'none';
             return rotate = false;
         }
 
     });
 
-    
 </script>
