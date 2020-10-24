@@ -47,17 +47,60 @@ html
     width: 100px;
     cursor: pointer;
 }
-.nav a
+.nav ul
 {
-    margin: 0px 8px;
+    display: inline-flex;
+    list-style-type: none;
+}
+.nav li a
+{
     text-decoration: none;
     color: black;
     font-weight: bold;
+    margin-left: 20px;
 }
-.nav a:hover
+.nav li a:hover
 {
     color: crimson;
     border-bottom: 2px solid crimson;
+}
+.submenu-1
+{
+    display: none;
+}
+.nav li:hover .submenu-1
+{
+    display: block;
+}
+.submenu-1 ul
+{
+    position: absolute;
+    transform: translate(-20%);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 200px;
+    height: fit-content;
+    background-color: white;
+    padding-top: 28px;
+}
+.submenu-1 ul li
+{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+}
+.submenu-1 ul li:hover
+{
+    background-color: dodgerblue;
+    color: white;
+}
+.submenu-1 ul li:hover a
+{
+    color: white;
+    border-bottom: none;
 }
 .login-btn a
 {
@@ -210,19 +253,35 @@ html
         flex-flow: column;
         overflow: hidden;
         background-color: white;
-        transition: all 0.5s ease;
+        transition: 0.5s;
     }
-    .nav a
+    .nav ul
     {
-        padding: 10px 20px;
-        border-bottom: 1px solid black;
+        width: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .nav a:first-child
+    .nav ul li
     {
-        padding-top: 30px;
+        display: inline-flex;
+        align-items: center;
+        width: 90%;
+        height: 50px;
+        border-bottom: 2px solid black;
     }
-    .nav a:last-child
+    .nav ul li:last-child
     {
+        border-bottom: none;
+    }
+    .nav ul li:hover
+    {
+        background-color: dodgerblue;
+        color: white;
+    }
+    .nav ul li:hover a
+    {
+        color: white;
         border-bottom: none;
     }
     .mob-btn
@@ -308,8 +367,11 @@ html
 }
 .section:nth-child(5)
 {
-    background-image: url(../img/pexels-bongkarn-thanyakij-3740217.jpg);
-    background-size: 100%;
+    background-image: url(../img/bg-3.jpg);
+    background-size: cover;
+    background-position: right;
+    margin: 50px 0px 50px 0px;
+
 }
 .main-flex
 {
@@ -432,6 +494,11 @@ html
     display: inline-flex;
     flex-flow: column;
     background-color: transparent;
+    transform: translatex(0px);
+}
+.card:first-child, .ex-card:first-child
+{
+    margin-left: 40px;
 }
 .card-grid::-webkit-scrollbar
 {
@@ -534,6 +601,7 @@ html
 
 .ex-card
 {
+    position: relative;
     width: 260px;
     height: 380px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.600);
@@ -644,6 +712,141 @@ html
 }
 
 
+/* pricing section starts here */
+
+.pricing-box
+{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pricing-card
+{
+    position: relative;
+    width: 280px;
+    height: 400px ;
+    margin: 20px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.600);
+    transition: 0.5s;
+}
+.pricing-card:hover
+{
+    transform: scale(1.02);
+}
+.pricing-logo
+{
+    border-radius: 10px;
+    width: 100%;
+    height: 100px;
+    background: dodgerblue;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pricing-logo .fa
+{
+    font-size: 1.8rem;
+}
+.pricing-logo h2
+{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.pricing-card p
+{
+    font-size: 1.2rem;
+    color: dodgerblue;
+}
+.pricing-card p span
+{
+    font-size: 2rem;
+}
+.pricing-card ul
+{
+    list-style-type: none;
+}
+.pricing-card .fa
+{
+    margin-right: 5px;
+}
+.pricing-card .fa-times
+{
+    color: red;
+}
+.pricing-card .fa-check
+{
+    color: #25D366;
+}
+.pricing-card a
+{
+    width: 120px;
+    height: 38px;
+    color: black;
+    background-color: dodgerblue;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    font-size: .8rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.ribbin
+{
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.ribbin span
+{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    background-color: yellow;
+    color: black;
+    position: relative;
+    top: 10px;
+    right: 0px;
+    display: inline-block;
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: .65rem;
+    text-transform: uppercase;
+}
+.pricing-card:nth-child(2) .pricing-logo, .pricing-card:nth-child(2) a
+{
+    background: orange;
+}
+.pricing-card:nth-child(2) p
+{
+    color: orange;
+}
+.pricing-card:nth-child(3) .pricing-logo, .pricing-card:nth-child(3) a
+{
+    background: crimson;
+}
+.pricing-card:nth-child(3) p
+{
+    color: crimson;
+}
+
+.pricing-card a:hover
+{
+    border: 2px solid black;
+    background-color: transparent;
+}
 
 
 
