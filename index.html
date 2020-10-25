@@ -562,12 +562,15 @@
         
         prev.addEventListener('click',() =>{
             slideIndex = (slideIndex - 1 + 5) % 5;
-            slider.style.transform = 'translate('+ ( slideIndex ) * -20 +'%)';        
+            slider.style.transform = 'translate('+ ( slideIndex ) * -20 +'%)';
+            slider.style.animation = 'none';        
         });
     
         next.addEventListener('click',() =>{
             slideIndex = (slideIndex + 1) % 5;
             slider.style.transform = 'translate('+ ( slideIndex ) * -20 +'%)';
+            slider.style.animation = 'none';        
+
         });
     
     </script>

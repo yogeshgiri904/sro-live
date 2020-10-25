@@ -92,6 +92,10 @@ html
     height: 50px;
     border-bottom: 2px solid black;
 }
+.submenu-1 ul li:last-child
+{
+    border-bottom: none;
+}
 .submenu-1 ul li:hover
 {
     background-color: dodgerblue;
@@ -665,7 +669,33 @@ html
     height: 100%;
     width: 500%;
     display: inline-flex;
-    transition: transform 0.5s ease;
+    transition: 0.5s;
+    animation: tslide 15s ease infinite;
+    animation-delay: 1s;
+}
+@keyframes tslide
+{
+    0%,100%
+    {
+        transform: translate(0);
+    }
+    20%
+    {
+        transform: translate(-20%);
+    }
+    40%
+    {
+        transform: translate(-40%);
+    }
+    60%
+    {
+        transform: translate(-60%);
+    }
+    80%
+    {
+        transform: translate(-80%);
+    }
+
 }
 .slides
 {

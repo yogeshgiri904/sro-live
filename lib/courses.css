@@ -1,0 +1,189 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+.testimonials
+{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 600px;
+    background-image: url("https://cdn.pixabay.com/photo/2018/03/19/18/20/tea-time-3240766_1280.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.testimonials h2
+{
+    font-size: 30px;
+    padding-top: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+.container
+{ 
+    display: inline-flex;
+}
+.slides
+{
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    width: 70%;
+    height: 350px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.500);
+    color: white;
+    display: inline-flex;
+    justify-content: space-between;
+    transition: 1s;
+    display: none;
+
+}
+#s2, #s3
+{
+    width: 0%;
+}
+.slides img
+{
+    width: 40%;
+    height: 100%;
+}
+.text
+{
+    width: 50%;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.text h3
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+.offr, .onr
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+.offr
+{
+    text-decoration: line-through;
+    color: grey;
+}
+.slides button
+{
+    display: block;
+    border: 1px solid crimson;
+    background-color: crimson;
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+}
+.slides button:hover
+{
+    color: crimson;
+    background-color: transparent;
+}
+
+.tbtn
+{
+    background-color: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+#prev
+{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+}
+#next
+{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+@media(max-width:720px)
+{
+    .slides
+    {
+        display: inline-block;
+        height: fit-content;
+        padding: 0px;
+    }
+    .slides img
+    {
+        width: 100%;
+        height: 300px;
+    }
+    .text
+    {
+        width: 100%;
+    }
+            
+}
+
+.head
+{
+    position: relative;
+    top: 100%;
+    left: 0;
+    display: inline-flex;
+    flex-flow: column;
+    width: 100vw;
+    background: transparent;
+    text-align: center;
+}
+.head h2
+{
+    font-size: 40px;
+    font-weight: 900;
+}
+.links
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 60%;
+    text-align: center;
+}
+.links a
+{
+    display: inline-table;
+    text-decoration: none;
+    color: crimson;
+    border: 1px solid crimson;
+    padding: 10px;
+    margin: 10px 2px;
+    border-radius: 50px;
+}
+.links a:hover
+{
+    background-color: crimson;
+    color: white;
+}
+.portal
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: repeat(5, 400px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+.itm1
+{
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 3px;
+    overflow: hidden;
+}

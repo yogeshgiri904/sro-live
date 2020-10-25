@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <title>Sign Up | Shri Ram Org</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="lib/header.js"></script>
+    <script src="lib/signin.js"></script>
+    <link rel="stylesheet" href="lib/header.css">
+    <link rel="stylesheet" href="lib/signin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body> 
+    <div class="container">
+        <div class="main_box">
+            <div class="main_content_1">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/265/265674.svg" class="avt">
+                <h2>Don't have an account?</h2>
+                <p>Hey! Are you new here? </br>Create an account now for free.</p>
+                <button id="change">Sign In</button>
+            </div>
+            <div class="main_content_2">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/265/265667.svg" class="avt">
+                <h2>Already have an account? </h2>
+                <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
+                <button id="unchange">Sign Up</button>
+            </div>
+        </div>
+        <div class="input_box">
+            <div class="input_content_1">
+                <h2>Welcome Back, Sign In</h2>
+                <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
+                <div class="form">
+                    <input type="text" id="user" placeholder="Enter Username" onkeyup="validateUser()"><p class="p0" id="p0"></p>
+                    <div class="pass">
+                        <input type="password" id="pass" placeholder="Enter Password" onkeyup="strPass()">
+                        <button id="seen" class="eye" onclick="seen()"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <button id="hide" class="eye" onclick="hide()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button><p class="p1" id="p1"></p>
+                    </div>
+                    <span><input type="checkbox" value="check">
+                            Remember on this device.
+                    </span>
+                    <input type="submit" value="Sign In">
+                    <a href="#"> Forgot Password? </a>
+                </div>
+                
+                <div class="social_box">
+                    <p>OR Sign In With</p>
+                        <div class="social">
+                            <a href="https://accounts.google.com/ServiceLogin"><i class="fa fa-google" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.twitter.com/login"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/login"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                </div>
+            </div>
+            <div class="input_content_2">
+                <h2>Welcome, Sign Up</h2>
+                <p>Hey! Are you new here? </br>Create an account now for free.</p>
+                <div class="form">
+                    <input type="text" id="user" placeholder="Enter Username" onkeyup="validateUser()"><p class="p0" id="p0"></p>
+                    <input type="email" id="mail" placeholder="Enter Mail" onkeyup="validateMail()" ><p class="p3" id="p3"></p>
+                    <input type="tel" id="tel" maxlength="10" placeholder="Mobile No.">
+                    <div class="pass">
+                        <input type="password" id="pass" placeholder="Enter Password" onkeyup="strPass()">
+                        <button id="seen" class="eye" onclick="seen()"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <button id="hide" class="eye" onclick="hide()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button><p class="p1" id="p1"></p>
+                    </div>
+                    <input type="password" id="cpass" placeholder="Confirm Password" ><p class="p2" id="p2"></p>
+                    <span><input type="checkbox" value="check">
+                        Remember on this device.
+                    </span>
+                    <span><input type="checkbox" value="check">
+                        I accept all the <a href="#">Terms & Conditions</a>.
+                    </span>
+                    <input type="submit" value="Sign Up">
+                </div>
+                
+                <div class="social_box">
+                    <p>OR Sign Up With</p>
+                        <div class="social">
+                            <a href="https://accounts.google.com/ServiceLogin"><i class="fa fa-google" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.twitter.com/login"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/login"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+    const main_box = document.querySelector('.main_box');
+    const main_content_1 = document.querySelector('.main_content_1');
+    const main_content_2 = document.querySelector('.main_content_2');
+
+    const input_box = document.querySelector('.input_box');
+    const input_content_1 = document.querySelector('.input_content_1');
+    const input_content_2 = document.querySelector('.input_content_2');
+
+    const change = document.getElementById('change');
+    const unchange = document.getElementById('unchange');
+
+
+    change.addEventListener('click',() =>{
+        input_box.style.transform = 'translate(-100%)';
+        main_box.style.transform = 'translate(100%)';
+        main_content_1.style.display = 'none';
+        input_content_1.style.display = 'none';
+        main_content_2.style.display = 'block';
+        input_content_2.style.display = 'block';  
+    });
+    unchange.addEventListener('click',() =>{
+        input_box.style.transform = 'translate(0%)';
+        main_box.style.transform = 'translate(0%)';
+        main_content_2.style.display = 'none';
+        input_content_2.style.display = 'none';
+        main_content_1.style.display = 'block';
+        input_content_1.style.display = 'block';
+    });
+
+    
+
+
+
+
+
+
+</script>

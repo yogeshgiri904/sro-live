@@ -1,0 +1,387 @@
+.main
+{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background-image: url("https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.overlay
+{
+    z-index: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.500);
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 80px;
+}
+.overlay .item
+{
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    display: block;
+    font-size: 50px;
+    color: white;
+    transition: 0.5s;
+}
+.item:hover
+{
+    transform: translateY(10px);
+}
+.heading
+{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 90%;
+    height: 50%;
+}
+.pic
+{
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 200px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.400);
+}
+.pic:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.mob
+{
+    display: none;
+}
+.lap
+{
+    text-align: left;
+    color: white;
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    font-size: 50px;
+}
+.name
+{
+    color: cyan;
+}
+.mainbtn
+{
+    display: inline-flex;
+    position: absolute;
+    left: 10%;
+    top: 70%;
+}
+.mainbtn a
+{
+    display: block;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    line-height: 30px;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1.5px solid orangered;
+    background-color: transparent;
+    color: orangered;
+    font-weight: bold;
+    transition: 0.4s;
+}
+.mainbtn a:nth-child(2)
+{
+    border: 1.5px solid #33FF57;
+    background-color: transparent;
+    color: #33FF57;  
+}
+.mainbtn a:hover
+{
+    background-color: orangered;
+    color:white;
+}
+.mainbtn a:nth-child(2):hover
+{
+    background-color: #33FF57;
+    color:white;
+}
+.skew
+{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 110%; 
+    left: 0%;
+    overflow: hidden;
+    background-color: transparent;
+}
+.aboutbox
+{
+    position: relative;
+    top: 30%;
+    left: -5%;
+    height: 40%;
+    width: 110%;
+    background-color: crimson;
+    transform: rotate(-3deg);
+}
+.abox
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80vw;
+    height: 60vh;
+    background-color: white;
+    border-radius: 5px;
+}
+.atext
+{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 50%;
+    height: 80%;
+    background-color: transparent;
+}
+.atext::before
+{
+    content: '';
+    position: absolute;
+    left: -180px;
+    top: -50px;
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/quote1.png);
+    background-position: left top;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    transition: 0.5s;
+}
+.atext:hover::before
+{
+    opacity: 1;
+    transform: translateY(-80px);
+}
+.atext::after
+{
+    content: '';
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/quote2.png);
+    background-position: right bottom;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    transition: 0.5s;
+}
+.atext:hover::after
+{
+    opacity: 1;
+    transform: translateY(80px);
+}
+.abox h3
+{
+    font-size: 35px;
+    font-weight: bold;
+}
+.abox p
+{
+    font-size: 18px;
+    padding-top: 20px;
+}
+.pic2
+{
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.600);
+}
+.abox a
+{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: teal;
+    background-color: transparent;
+    border: 2px solid teal;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.abox a:hover
+{
+    color: white;
+    background-color: teal;
+}
+
+
+
+@media (max-width: 720px)
+{
+.overlay
+{
+    top: 60px;
+}
+.heading
+{
+    width: 80%;
+    height: 70%;
+}
+.pic
+{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    padding: 7px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+}
+.lap
+{
+    display: none;
+}
+.mob
+{
+    display: inline;
+    font-size: 13px;
+    text-align: left;
+    position: absolute;
+    font-weight: lighter;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%,-50%);
+    color: white;
+    line-height: 25px;
+}
+.name, .job
+{
+    font-size: 20px;
+}
+.mainbtn
+{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    display: inline-block;
+}
+.mainbtn a
+{
+    display: block;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    font-size: 13px;
+}
+.overlay .item
+{
+    left: 45%;
+    bottom: 20%;
+    font-size: 30px;
+}
+.skew
+{
+    position: absolute;
+    height: 150vh;
+    width: 100vw;
+    top: 110%; 
+    left: 0%;
+    overflow: hidden;
+}
+.abox
+{
+    display: inline-block;
+    width: 90vw;
+    height: 90vh;
+    border: 1px solid crimson;
+}
+.pic2
+{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 220px;
+    height: 220px;
+    padding: 8px;
+}
+.atext
+{
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 15px;
+    width: 90%;
+    height: 70%;
+}
+.atext h3
+{
+    font-size: 25px;
+    text-align: center;
+}
+.atext p
+{
+    font-size: 15px;
+    text-align: center;
+
+}
+.atext::before
+{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: -50px;
+    background-size: 100px 100px;
+    width: 100px;
+}
+.atext::after
+{
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-size: 100px 100px;
+    width: 100px;
+
+}
+.atext a
+{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+}
+}
+
