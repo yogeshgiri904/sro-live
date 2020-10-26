@@ -766,6 +766,7 @@ html
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.600);
     transition: 0.5s;
+    background-color: white;
 }
 .pricing-card:hover
 {
@@ -799,6 +800,7 @@ html
 .pricing-card p span
 {
     font-size: 2rem;
+    font-weight: bold;
 }
 .pricing-card ul
 {
