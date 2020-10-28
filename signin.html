@@ -3,12 +3,11 @@
     <title>Sign Up | Shri Ram Org</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="lib/header.js"></script>
-    <script src="lib/signin.js"></script>
     <link rel="stylesheet" href="lib/header.css">
     <link rel="stylesheet" href="lib/signin.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body> 
@@ -16,37 +15,59 @@
         <div class="main_box">
             <div class="main_content_1">
                 <img src="https://www.flaticon.com/svg/static/icons/svg/265/265674.svg" class="avt">
-                <h2>Don't have an account?</h2>
-                <p>Hey! Are you new here? </br>Create an account now for free.</p>
+                <h2>Already have an account? </h2>
+                <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
                 <button id="change">Sign In</button>
             </div>
             <div class="main_content_2">
                 <img src="https://www.flaticon.com/svg/static/icons/svg/265/265667.svg" class="avt">
-                <h2>Already have an account? </h2>
-                <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
+                <h2>Don't have an account?</h2>
+                <p>Hey! Are you new here? </br>Create an account now for free.</p>
                 <button id="unchange">Sign Up</button>
             </div>
         </div>
         <div class="input_box">
             <div class="input_content_1">
-                <h2>Welcome Back, Sign In</h2>
-                <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
-                <div class="form">
-                    <input type="text" id="user" placeholder="Enter Username" onkeyup="validateUser()"><p class="p0" id="p0"></p>
-                    <div class="pass">
-                        <input type="password" id="pass" placeholder="Enter Password" onkeyup="strPass()">
-                        <button id="seen" class="eye" onclick="seen()"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                        <button id="hide" class="eye" onclick="hide()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button><p class="p1" id="p1"></p>
+                <h2>Welcome, Sign Up</h2>
+                <p>Hey! Are you new here? </br>Create an account now for free.</p>
+                <form class="form" id="form">
+                    <div class="form-control" id="namefc">
+                        <input type="text" id="name" placeholder="Enter Username" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="nametext">Error Msg.</span>
                     </div>
-                    <span><input type="checkbox" value="check">
-                            Remember on this device.
-                    </span>
-                    <input type="submit" value="Sign In">
-                    <a href="#"> Forgot Password? </a>
-                </div>
+                    <div class="form-control" id="emailfc">
+                        <input type="email" id="email" placeholder="Enter Email" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="emailtext">Error Msg.</span>
+                    </div>
+                    <div class="form-control" id="phonefc">
+                        <input type="number" id="phone" placeholder="Mobile Number" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="phonetext">Error Msg.</span>
+                    </div>
+                    <div class="form-control" id="passfc">
+                        <input type="password" id="pass" placeholder="Enter Password" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="passtext">Error Msg.</span>
+                    </div>
+                    <div class="form-control" id="cpassfc">
+                        <input type="password" id="cpass" placeholder="Confirm Password" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="cpasstext">Error Msg.</span>
+                    </div>
+                    <span><input type="checkbox" value="check"> &nbsp; I accept all the <a href="#">Terms & Conditions</a>.</span>
+                    <input type="submit" value="Sign Up">
+                </form>
+
                 
                 <div class="social_box">
-                    <p>OR Sign In With</p>
+                    <p>OR Sign Up With</p>
                         <div class="social">
                             <a href="https://accounts.google.com/ServiceLogin"><i class="fa fa-google" aria-hidden="true"></i></a>
                             <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -54,31 +75,32 @@
                             <a href="https://www.linkedin.com/login"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                 </div>
+
             </div>
+
             <div class="input_content_2">
-                <h2>Welcome, Sign Up</h2>
-                <p>Hey! Are you new here? </br>Create an account now for free.</p>
-                <div class="form">
-                    <input type="text" id="user" placeholder="Enter Username" onkeyup="validateUser()"><p class="p0" id="p0"></p>
-                    <input type="email" id="mail" placeholder="Enter Mail" onkeyup="validateMail()" ><p class="p3" id="p3"></p>
-                    <input type="tel" id="tel" maxlength="10" placeholder="Mobile No.">
-                    <div class="pass">
-                        <input type="password" id="pass" placeholder="Enter Password" onkeyup="strPass()">
-                        <button id="seen" class="eye" onclick="seen()"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                        <button id="hide" class="eye" onclick="hide()"><i class="fa fa-eye-slash" aria-hidden="true"></i></button><p class="p1" id="p1"></p>
+                <h2>Welcome Back, Sign In</h2>
+                <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
+                <form class="form" id="form">
+                    <div class="form-control" id="namefc">
+                        <input type="text" id="name" placeholder="Enter Username" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="nametext">Error Msg.</span>
                     </div>
-                    <input type="password" id="cpass" placeholder="Confirm Password" ><p class="p2" id="p2"></p>
-                    <span><input type="checkbox" value="check">
-                        Remember on this device.
-                    </span>
-                    <span><input type="checkbox" value="check">
-                        I accept all the <a href="#">Terms & Conditions</a>.
-                    </span>
-                    <input type="submit" value="Sign Up">
-                </div>
+                    <div class="form-control" id="passfc">
+                        <input type="password" id="pass" placeholder="Enter Password" autocomplete="off">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <span id="passtext">Error Msg.</span>
+                    </div>
+                    <span><input type="checkbox" value="check"> &nbsp; Remember me on this device.</span>
+                    <input type="submit" value="Sign In">
+                    <a href="#">Forgot Password ?</a>
+                </form>
                 
                 <div class="social_box">
-                    <p>OR Sign Up With</p>
+                    <p>OR Sign In With</p>
                         <div class="social">
                             <a href="https://accounts.google.com/ServiceLogin"><i class="fa fa-google" aria-hidden="true"></i></a>
                             <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -92,6 +114,7 @@
 </body>
 </html>
 
+<!-- slider js starts here -->
 
 <script>
     const main_box = document.querySelector('.main_box');
@@ -112,7 +135,7 @@
         main_content_1.style.display = 'none';
         input_content_1.style.display = 'none';
         main_content_2.style.display = 'block';
-        input_content_2.style.display = 'block';  
+        input_content_2.style.display = 'inline-flex';  
     });
     unchange.addEventListener('click',() =>{
         input_box.style.transform = 'translate(0%)';
@@ -120,14 +143,200 @@
         main_content_2.style.display = 'none';
         input_content_2.style.display = 'none';
         main_content_1.style.display = 'block';
-        input_content_1.style.display = 'block';
+        input_content_1.style.display = 'inline-flex';
     });
 
+
+
     
+</script>
+
+<!-- validation starts here -->
+
+<script>
+
+    const form = document.getElementById('form');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const pass = document.getElementById('pass');
+    const cpass = document.getElementById('cpass');
+
+    form.addEventListener('submit', (event) =>{
+        event.preventDefault();
+        checkit();
+        spaceValidation();
+    });
+
+    const spaceValidation = () =>{
+        if(name.value == '')
+        {
+            document.getElementById('nametext').innerHTML='Username cannot be blank !'
+            document.querySelector('#namefc').className = 'form-control error'
+        }
+        if(email.value == '')
+        {
+            document.getElementById('emailtext').innerHTML='Email cannot be blank !'
+            document.querySelector('#emailfc').className = 'form-control error'
+        }
+        if(phone.value == '')
+        {
+            document.getElementById('phonetext').innerHTML='Mobile cannot be blank !'
+            document.querySelector('#phonefc').className = 'form-control error'
+        }
+        if(pass.value == '')
+        {
+            document.getElementById('passtext').innerHTML='Password cannot be blank !'
+            document.querySelector('#passfc').className = 'form-control error'
+        }
+        if(cpass.value == '')
+        {
+            document.getElementById('cpasstext').innerHTML='Confirm Password cannot be blank !'
+            document.querySelector('#cpassfc').className = 'form-control error'
+        }
+
+    };
 
 
+    name.addEventListener('keyup', () =>{
+        var upattern1=/^[A-Za-z0-9]{3,}$/
+        var upattern2=/^(?=.*[0-9]){2,}(?=.*[a-z]){2,}[A-Za-z0-9]{5,}$/
+        if(upattern2.test(name.value))
+        {
+            document.getElementById('nametext').innerHTML= '"' + name.value + '" USERNAME IS AVAILABLE !'
+            document.querySelector('#namefc').className = 'form-control success'
+        }
+        else if(upattern1.test(name.value))
+        {
+            document.getElementById('nametext').innerHTML= '"' + name.value + '" USERNAME IS NOT AVAILABLE !'
+            document.querySelector('#namefc').className = 'form-control error'
+        }
+        else
+        {
+            document.getElementById('nametext').innerHTML='INVALID USERNAME !'
+            document.querySelector('#namefc').className = 'form-control error'
+        }
+
+    });
+
+    email.addEventListener('keyup', () =>{
+        var pattern=/^[A-Za-z.0-9]{3,}@[a-z]{3,}[.]{1}[a-z]{2,}[.]{0,1}[a-z]{0,3}$/
+            if(pattern.test(email.value))
+            {
+                document.getElementById('emailtext').innerHTML='Your Email Address is valid.'    
+                document.querySelector('#emailfc').className = 'form-control success'
+            
+            }
+            else
+            {
+                document.getElementById('emailtext').innerHTML='You are entering an Invalid Email.'
+                document.querySelector('#emailfc').className = 'form-control error'
+
+            }
+
+    });
+
+    phone.addEventListener('keyup', () =>{
+            if(phone.value.length== '10')
+            {
+                document.getElementById('phonetext').innerHTML='Your Mobile Number is valid.'    
+                document.querySelector('#phonefc').className = 'form-control success'
+            
+            }
+            else
+            {
+                document.getElementById('phonetext').innerHTML='You are entering an Invalid Mobile Number.'
+                document.querySelector('#phonefc').className = 'form-control error'
+
+            }
+
+    });
+
+    pass.addEventListener('keyup', () =>{
+
+            var weak=/^[A-Za-z0-9!@#$%^&*]{0,}$/
+            var medium=/^(?=.*[0-9])(?=.*[a-z])[A-Za-z0-9!@#$%^&*]{5,}$/
+            var strong=/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/
+
+            if(strong.test(pass.value))
+            {
+                document.getElementById('passtext').innerHTML='Your Password Strength - Strong'
+                document.querySelector('#passfc').className = 'form-control success'
+            }
+            else if(medium.test(pass.value))
+            {
+                document.getElementById('passtext').innerHTML='Your Password Strength - Medium'
+                document.querySelector('#passfc').className = 'form-control success'
+
+            }
+            else if(weak.test(pass.value))
+            {
+                document.getElementById('passtext').innerHTML='Your Password Strength - Weak'
+                document.querySelector('#passfc').className = 'form-control error'
+            }
+            else
+            {
+                document.getElementById('passtext').innerHTML='CAUTION!!! You are entering an Invalid Charactor.'
+                document.querySelector('#passfc').className = 'form-control error'
+            }
+
+    });
 
 
+    cpass.addEventListener('keyup', () =>{
+
+        if(pass.value == cpass.value)
+        {
+            document.getElementById('cpasstext').innerHTML='PASSWORD MATCHED'
+            document.querySelector('#cpassfc').className = 'form-control success'
+
+        }
+        else
+        {
+            document.getElementById('cpasstext').innerHTML='PASSWORD NOT MATCHED !'
+            document.querySelector('#cpassfc').className = 'form-control error'
+
+        }
+
+    });
+
+
+    const finalState = (count, srate) =>{
+        if(count === srate)
+        {
+            swal("Congratulations! "+ name.value , "Your Registration Is Successful!", "success")
+                .then((value) => {
+                    location.href = 'signin.html';
+                });
+        }
+        else
+        {
+            return false;
+        }
+    };
+
+
+    const checkit = () =>{
+        let checking = document.getElementsByClassName('form-control');
+        // console.log(checking);
+        let count = checking.length - 1;
+        for(let i = 0; i< checking.length; i++)
+        {
+            if(checking[i].className == 'form-control success')
+            {
+                var srate = 0 + i;
+                finalState(count, srate);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+    };
+
+
+    
 
 
 </script>

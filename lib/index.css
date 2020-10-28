@@ -545,7 +545,7 @@ html
     text-align: center;
     padding: 20px 10px;
 }
-.fa-check-circle-o
+.fa-check-circle-o,.fa-check-circle
 {
     margin-left: 5px;
     color: rgb(0, 255, 0);
