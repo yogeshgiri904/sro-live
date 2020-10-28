@@ -23,7 +23,6 @@ body
     flex-wrap: wrap;
     height: 620px;
     width: 75%;
-    border-radius: 5px;
     background: linear-gradient(to right, purple , cyan);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
@@ -39,8 +38,6 @@ body
     align-items: center;
     text-align: center;
     transition: transform ease-in-out 1s;
-    border-radius: 5px;
-
 }
 .input_box
 {
@@ -56,10 +53,6 @@ body
     background-color: white;
     border-radius: 50%;
     padding: 5px;
-}
-.main_box p
-{
-    font-size: 0.8rem;
 }
 .main_box button, input[type="submit"]
 {
@@ -92,7 +85,7 @@ body
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2% 8%;
+    padding: 1% 8%;
 }
 .input_content_2
 {
@@ -107,6 +100,15 @@ body
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.container h1
+{
+    font-size: 2rem;
+    color: dodgerblue;
+}
+.container p
+{
+    font-size: .9rem;
 }
 .form-control
 {
@@ -189,13 +191,13 @@ body
 }
 .social_box
 {
-    margin-top: 10px;
+    margin-top: 80px;
     text-align: center;
 }
 .social_box p
 {
-    font-size: 0.8rem;
-    padding-bottom: 10px;
+    font-size: 0.9rem;
+    padding-bottom: 20px;
 }
 .social
 {
@@ -208,9 +210,9 @@ body
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 1.2rem;
-    width: 40px;
-    height: 40px;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     color: white;
     transition: 0.5s;
@@ -261,6 +263,11 @@ body
         position: absolute;
         top: 0;
         left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .form
+    {
         width: 100%;
     }
 }

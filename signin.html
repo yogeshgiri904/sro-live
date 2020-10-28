@@ -28,7 +28,7 @@
         </div>
         <div class="input_box">
             <div class="input_content_1">
-                <h2>Welcome, Sign Up</h2>
+                <h1>WELCOME, SIGN UP</h1>
                 <p>Hey! Are you new here? </br>Create an account now for free.</p>
                 <form class="form" id="form">
                     <div class="form-control" id="namefc">
@@ -64,24 +64,12 @@
                     <span><input type="checkbox" value="check"> &nbsp; I accept all the <a href="#">Terms & Conditions</a>.</span>
                     <input type="submit" value="Sign Up">
                 </form>
-
-                
-                <div class="social_box">
-                    <p>OR Sign Up With</p>
-                        <div class="social">
-                            <a href="https://accounts.google.com/ServiceLogin"><i class="fa fa-google" aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="https://www.twitter.com/login"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="https://www.linkedin.com/login"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </div>
-                </div>
-
             </div>
 
             <div class="input_content_2">
-                <h2>Welcome Back, Sign In</h2>
+                <h1>WELCOME BACK, SIGN IN</h1>
                 <p>Sign In to your existing account at </br> Shri Ram Organization. </p>
-                <form class="form" id="form">
+                <form class="form" id="form_2">
                     <div class="form-control" id="namefc">
                         <input type="text" id="name" placeholder="Enter Username" autocomplete="off">
                         <i class="fa fa-check-circle" aria-hidden="true"></i>
@@ -128,26 +116,30 @@
     const change = document.getElementById('change');
     const unchange = document.getElementById('unchange');
 
-
-    change.addEventListener('click',() =>{
+    const changeBoxes = () =>{
         input_box.style.transform = 'translate(-100%)';
         main_box.style.transform = 'translate(100%)';
         main_content_1.style.display = 'none';
         input_content_1.style.display = 'none';
         main_content_2.style.display = 'block';
-        input_content_2.style.display = 'inline-flex';  
-    });
-    unchange.addEventListener('click',() =>{
+        input_content_2.style.display = 'inline-flex'; 
+    };
+    const changeBoxesAgain = () =>{
         input_box.style.transform = 'translate(0%)';
         main_box.style.transform = 'translate(0%)';
         main_content_2.style.display = 'none';
         input_content_2.style.display = 'none';
         main_content_1.style.display = 'block';
         input_content_1.style.display = 'inline-flex';
+    };
+
+    change.addEventListener('click',() =>{
+        changeBoxes();
     });
 
-
-
+    unchange.addEventListener('click',() =>{
+        changeBoxesAgain();
+    });
     
 </script>
 
@@ -167,6 +159,7 @@
         checkit();
         spaceValidation();
     });
+
 
     const spaceValidation = () =>{
         if(name.value == '')
@@ -237,7 +230,7 @@
     });
 
     phone.addEventListener('keyup', () =>{
-            if(phone.value.length== '10')
+            if(phone.value.length== 10)
             {
                 document.getElementById('phonetext').innerHTML='Your Mobile Number is valid.'    
                 document.querySelector('#phonefc').className = 'form-control success'
@@ -302,7 +295,7 @@
 
 
     const finalState = (count, srate) =>{
-        if(count === srate)
+        if(srate == 4)
         {
             swal("Congratulations! "+ name.value , "Your Registration Is Successful!", "success")
                 .then((value) => {
@@ -318,7 +311,7 @@
 
     const checkit = () =>{
         let checking = document.getElementsByClassName('form-control');
-        // console.log(checking);
+        console.log(checking);
         let count = checking.length - 1;
         for(let i = 0; i< checking.length; i++)
         {
@@ -326,6 +319,8 @@
             {
                 var srate = 0 + i;
                 finalState(count, srate);
+                console.log(srate,count);
+
             }
             else
             {
@@ -336,7 +331,21 @@
     };
 
 
-    
+    // signin js
+
+    const form_2 = document.getElementById('form_2');
+
+    form_2.addEventListener('submit', (event_2) =>{
+        event_2.preventDefault();
+        signinResult();
+    });
+
+    const signinResult = () =>{
+        swal("Oops! ", "You don't have an account. Create New", "error")
+                .then((value) => {
+                    changeBoxesAgain();
+                });
+    };
 
 
 </script>
