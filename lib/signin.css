@@ -270,4 +270,8 @@ body
     {
         width: 100%;
     }
+    .container h1
+    {
+        font-size: 1.6rem;
+    }
 }
