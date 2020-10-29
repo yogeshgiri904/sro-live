@@ -1,11 +1,16 @@
+.section:nth-child(2)
+{
+    margin-top: 60px;
+}
+
 .explore-subject
 {
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, 300px);
     grid-gap: 20px;
-    padding: 50px;
+    padding: 30px;
+    justify-content: center;
 }
 .subject
 {
@@ -70,6 +75,7 @@
     color: white;
     font-size: 1.5rem;
     text-transform: uppercase;
+    text-align: center;
 }
 .subject:hover .subject-text
 {
@@ -91,5 +97,76 @@
     border: 2px solid crimson;
     border-radius: 3px;
     text-decoration: none;
+
+}
+.filter-box
+{
+    min-height: 400px;
+}
+.filter-box ul
+{
+    width: 100vw;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter-box ul li
+{
+    list-style-type: none;
+    background-color: #eee;
+    padding: 8px 20px;
+    margin: 10px 5px;
+    letter-spacing: .8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.filter-box ul li:hover, .filter-box ul .active
+{
+    color: white;
+    background-color: dodgerblue;
+}
+.item-box
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.item
+{
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    overflow: hidden;
+}
+.item img
+{
+    width: 100%;
+}
+
+
+@media(max-width:720px)
+{
+    .explore-subject
+    {
+        grid-template-columns: repeat(auto-fit, 150px);
+        grid-gap: 10px;
+    }
+    .subject
+    {
+        height: 100px;
+    }
+    .subject-text a
+    {
+        font-size: 1rem;
+    }
+    .item
+    {
+        width: 160px;
+        height: 160px;
+        margin: 5px;
+        overflow: hidden;
+    }
 
 }

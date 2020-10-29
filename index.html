@@ -3,6 +3,7 @@
 <head>
     <title>Shri Ram Org | Official</title>
     <link rel="stylesheet" href="lib/index.css">
+    <link rel="stylesheet" href="lib/header.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
@@ -13,9 +14,11 @@
 <body>
 <!-- header starts here -->
 
-    <div class="site-body">
+<div class="site-body">
+    
+    <nav>
         <div class="main">
-            <div class="header" id="h">
+            <div class="header">
                 <button onclick="openBar()" id="open-btn" class="mob-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
                 <button onclick="closeBar()" id="close-btn" class="mob-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
                 <img src="img/logo.png" alt="Official logo">
@@ -63,6 +66,7 @@
             </div>
             <a href="#" class="top-up"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
         </div>
+    </nav>
 
 <!-- main heading section starts here -->
 
@@ -80,9 +84,8 @@
                     <p>Advanced | 2 Days | 16 Lectures</p>
                     <p>Lecturer - Bhuvnesh Giri</p>
                     <img src="img/5-star.png" class="stars">
-                    <p class="about-text">Ethical Hacking Workshop mainly focuses on the students eager to be a White Hat Hacker.
-                        You will learn a brief of the world of hacking including to the basics of networking
-                        that will help you have a deep understanding of the working of internet...
+                    <p class="about-text"> This workshop mainly focuses on the students eager to be a White Hat Hacker.
+                        You will learn a brief of the world of hacking including to the basics of networking...
                     </p>
                     <button class="pre-register">pre-register</button>
                 </div>
@@ -506,14 +509,14 @@
 <script>
     function openBar()
     {
-        document.getElementById('nav').style.height='45vh'
+        document.getElementById('nav').style.transform = "translate(00vw)"
         document.getElementById('open-btn').style.display='none'
         document.getElementById('close-btn').style.display='block'
 
     }
     function closeBar()
     {
-        document.getElementById('nav').style.height='0vh'
+        document.getElementById('nav').style.transform = "translate(-100vw)"
         document.getElementById('open-btn').style.display='block'
         document.getElementById('close-btn').style.display='none'
 

@@ -105,6 +105,7 @@ body
 {
     font-size: 2rem;
     color: dodgerblue;
+    font-weight: bold;
 }
 .container p
 {
@@ -169,6 +170,10 @@ body
     color: #e74c3c;
     visibility: visible;
 }
+.form input[type="number"]::-webkit-inner-spin-button
+{
+    appearance: none;
+}
 .form input[type="submit"]
 {
     border-radius: 20px;
@@ -191,13 +196,8 @@ body
 }
 .social_box
 {
-    margin-top: 80px;
+    margin-top: 50px;
     text-align: center;
-}
-.social_box p
-{
-    font-size: 0.9rem;
-    padding-bottom: 20px;
 }
 .social
 {
@@ -211,8 +211,8 @@ body
     align-items: center;
     text-decoration: none;
     font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     color: white;
     transition: 0.5s;
