@@ -55,11 +55,11 @@ html
 .nav li a
 {
     text-decoration: none;
-    color: black;
     font-weight: bold;
     margin-left: 20px;
+    color: black;
 }
-.nav li a:hover
+.nav .active a, .nav li a:hover
 {
     color: crimson;
     border-bottom: 2px solid crimson;
@@ -98,7 +98,7 @@ html
 }
 .submenu-1 ul li:hover
 {
-    background-color: dodgerblue;
+    background-color: crimson;
     color: white;
 }
 .submenu-1 ul li:hover a
@@ -186,31 +186,45 @@ html
     width: 150px;
     height: 100%;
     color: white;
-    background-color: crimson;
+    background: linear-gradient(to left, #ff512f, #dd2476);
+    background-repeat: no-repeat;
+    background-position: 0px 0;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+.search-bar button:hover 
+{
+    background-position: -200px 0;
+    color: #dd2476;
+}
+.search-bar button span
+{
+    font-weight: bold;
 }
 .search-bar .fa
 {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 .explore-btn a
 {
     display: inline-block;
     margin-top: 30px;
-    color: seagreen;
-    background-color: transparent;
-    border: 2px solid seagreen;
+    background: linear-gradient(to left, #ff512f, #dd2476);
+    background-repeat: no-repeat;
+    background-position: 0px 0;
+    color: white;
     text-decoration: none;
     border-radius: 100px;
     padding: 10px 40px;
     font-weight: bold;
     transition: all 0.5s ease;
+    background-color: white;
 }
 .explore-btn a:hover
 {
-    background-color: seagreen;
-    color: white;
+    background-position: 200px 0;
+    color: #dd2476;
 }
 .top-up
 {
@@ -228,6 +242,7 @@ html
     font-size: 35px;
     background-color: crimson ;
     box-shadow: 5px 5px 10px black;
+    padding-bottom: 2px;
     border-radius: 50%;
     transition: 0.5s;
 }
@@ -316,15 +331,20 @@ html
     {
         width: 80%;
         height: 100%;
-        font-size: .6rem;
+        font-size: .65rem;
         padding-left: 10px;
         letter-spacing: 1px;
         word-spacing: 2px;
     }
     .search-bar button
     {
+        font-size: 1.1rem;
         width: 15%;
         text-align: center;
+    }
+    .search-bar .fa
+    {
+        margin-right: 0px;
     }
     .search-bar button span
     {
@@ -375,7 +395,6 @@ html
     background-size: cover;
     background-position: right;
     margin: 50px 0px 50px 0px;
-
 }
 .main-flex
 {
@@ -455,9 +474,17 @@ html
 }
 @media(max-width: 720px)
 {
+    .section-h
+    {
+        font-size: 1.7rem;
+    }
     .section-p
     {
         font-size: .8rem;
+    }
+    .main-flex
+    {
+        width: 92%;
     }
     .text-box h2
     {
@@ -502,7 +529,7 @@ html
 }
 .card:first-child, .ex-card:first-child
 {
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .card-grid::-webkit-scrollbar
 {
@@ -763,18 +790,16 @@ html
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.600);
     transition: 0.5s;
     background-color: white;
 }
 .pricing-card:hover
 {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 .pricing-logo
 {
-    border-radius: 10px;
     width: 100%;
     height: 100px;
     background: dodgerblue;
